@@ -28,7 +28,7 @@ Una aplicación web interactiva desarrollada con Angular que simula notas adhesi
 
 ## 🚦 Cómo Empezar
 
-1. Clona el repositorio
+1. Clona el repositorio (https://github.com/iviruu/post-it-notes-app.git)
 2. Instala las dependencias con `npm install`
 3. Inicia el servidor de desarrollo con `ng serve`
 4. Navega a `http://localhost:4200` en tu navegador
