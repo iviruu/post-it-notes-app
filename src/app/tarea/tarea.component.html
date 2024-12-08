@@ -1,0 +1,19 @@
+<div class="titulo">Tus tareas !</div>
+<div class="boton-contenedor">
+  <button (click)="crearNota()">+</button>
+</div>
+<div class="alerta" *ngIf="mostrarAdvertencia">
+  Ya hay una nota vacía. Elimínala antes de crear una nueva.
+</div>
+<div class="notas-contenedor">
+  <div *ngFor="let nota of notas; let i = index" 
+       class="nota" 
+       [style.left.px]="nota.posicion.x" 
+       [style.top.px]="nota.posicion.y"
+       [style.transform]="'rotate(' + nota.rotacion + 'deg)'"
+       (mousedown)="iniciarArrastre($event, i)">
+    <button class="close-button" (click)="eliminarNota(i)">x</button>
+    <textarea [(ngModel)]="nota.texto" (input)="guardarNotas()"></textarea>
+    <div class="fecha">{{ nota.fecha | date:'short' }}</div>
+  </div>
+</div>

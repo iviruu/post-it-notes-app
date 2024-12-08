@@ -1,0 +1,152 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Evita el desplazamiento en ambos ejes */
+  height: 100%;
+  width: 100%;
+}
+
+.titulo {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  text-align: center;
+}
+
+.boton-contenedor {
+  position: fixed;
+  top: 80px; /* Ajusta la posición desde la parte superior */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 1000;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+  width: 45px; /* Ajusta el ancho del botón */
+  height: 45px; /* Ajusta la altura del botón */
+  border-radius: 10px;
+  background-color: #ffeb3b;
+  text-align: center;
+  line-height: 1; /* Asegura que el texto esté centrado verticalmente */
+}
+
+.advertencia {
+  display: block;
+  color: #f44336;
+  background-color: #ffe6e6;
+  border: 1px solid #f44336;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 10px; /* Espacio entre el botón y la alerta */
+  font-size: 14px;
+}
+
+.notas-contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 180px 20px 20px; /* Ajusta el padding superior para el botón */
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.nota {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: #ffeb3b;
+  border: 1px solid black;
+  padding: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  cursor: move;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0deg);
+}
+
+.fecha {
+  font-size: 12px;
+  text-align: left;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  resize: none;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  overflow: hidden;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.close-button {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #f44336;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alerta {
+  position: fixed;
+  top: 140px; /* Coloca la alerta debajo del botón */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  background-color: #ffe6e6;
+  color: #f44336;
+  border: 1px solid #f44336;
+  border-radius: 5px;
+  z-index: 1000;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  
+}
+
+@media (max-width: 768px) {
+  .notas-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 180px 20px 20px;
+    min-height: 100vh;
+  }
+
+  .nota {
+    width: calc(80% - 40px);
+    height: 150px;
+    margin: 20px 20px 30px 20px;
+    position: static;
+  }
+}
